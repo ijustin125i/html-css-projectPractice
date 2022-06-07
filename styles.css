@@ -1,0 +1,227 @@
+
+/* 
+===========
+Variables 
+===========
+*/
+
+:root{ 
+    --primaryColor: #f15025;
+    --mainBlack: #222;
+    --mainWhite: #fff;
+    --offWhite:#f7f7f7;
+    --darkgrey:#afafaf;
+    --mainTransition: all 0.3s linear;
+    --mainSpacing: 0.2rem;
+}
+
+/* 
+===========
+Global Styles
+===========
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+a{
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+h1, h2, h3 {
+    text-transform: capitalize;
+    letter-spacing: var(--mainSpacing);
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    margin-bottom: 0;
+}
+
+body{
+    font-family: 'Fira Code', monospace;
+}
+
+p{
+    font-weight: 300;
+    font-size: 0.7rem;
+    line-height: 2;
+}
+
+.btn{
+    display: inline-block;
+    padding: .5rem 1rem;
+    text-transform: capitalize;
+    border: 3px solid var(--primaryColor);
+    color: var(--primaryColor);
+    margin: 3rem;
+    transition: var(--mainTransition);
+}
+
+.btn:hover{
+    background: var(--primaryColor);
+    color: var(--mainWhite);
+}
+
+/* 
+===========
+main navbar 
+===========
+*/
+
+.main-navbar {
+    background-color: darkgrey;
+    padding:  0 2rem;
+}
+
+.main-navbar li{
+   list-style: none;
+}
+
+.main-navbar a{
+    text-transform: capitalize;
+    display: block;
+    padding: 1 rem 0;
+    color: var(--primaryColor);
+    letter-spacing: var(--mainSpacing);
+ }
+
+ .main-navbar a:hover{
+     color: var(--mainBlack);
+ }
+
+ @media screen and (min-width: 992px) {
+     .main-navbar ul{
+         max-width: 1170px; 
+         margin: 0 auto;
+         background: var(--darkgrey);
+         display: grid;
+         grid-template-columns: repeat(4,1fr); 
+     }
+
+     .main-navbar a{
+        text-align: center;
+     }
+     
+ }
+
+ /* 
+===========
+Hero 
+===========
+*/
+
+.hero-header {
+    min-height: 100vh;
+    background: var(--primaryColor);
+    color: var(--mainWhite);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-banner p {
+    width: 80%;
+    max-width: 560px;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    .hero-banner {
+        padding: 0 3rem;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .hero-header {
+        background-image: url(https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__480.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }  
+}
+
+/* 
+===========
+Cards 
+===========
+*/
+.title {
+    text-align: center;
+}
+
+.cards {
+    padding: 4rem 0;
+}
+
+.card{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+}
+.cards-center {
+    width: 80vw;
+    max-width: 1170px;
+    margin: 2rem auto;
+}
+
+.card {
+    border: 1px solid var(--darkgrey);
+    margin-bottom: 3rem;
+}
+
+.card-info{
+    padding: 1rem;
+}
+
+.card-footer {
+    background: var(--darkgrey);
+    padding: 0.5rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr)
+    ;
+    justify-items: center;
+}
+
+.card-footer span {
+    color: var(--primaryColor);
+}
+
+/* 2 column layout w/a screen width of anything below 768px */
+@media(min-width: 768px) {
+    .cards-center{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 2rem;
+    }
+}
+
+/* 3 column layout w/a screen width of anything above 1170px */
+@media(min-width: 1170px) {
+    .cards-center{
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+/* 4 column layout w/a screen width of anything above 1500px */
+@media(min-width: 1500px) {
+    .cards-center{
+        grid-template-columns: repeat(4, 1fr);
+        
+    }
+}
